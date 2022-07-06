@@ -1,7 +1,8 @@
 import React from "react";
 import "../../css/Footer/Footer.css";
+import { words } from "../../words";
 function Footer() {
-  return <footer>&copy;copy right mohamed maher 2021</footer>;
+  return <footer>{words.footerTitle}</footer>;
 }
 
 export default Footer;
