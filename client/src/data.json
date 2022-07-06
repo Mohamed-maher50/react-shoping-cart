@@ -2,7 +2,7 @@
     {
         "id": "1",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLmVAVhEN1eF4UoKGE9c4BY8hSS6FAj0yG0g&usqp=CAU",
         "desc": "This is Product 1",
         "price": 30,
         "size": [
@@ -13,7 +13,7 @@
     {
         "id": "2",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://uptodate.store/wp-content/uploads/2022/01/ktc-product-memory-beast-ddr4-single-1-zm-lg-300x300.jpg",
         "desc": "This is Product 2",
         "price": 55,
         "size": [
@@ -24,7 +24,7 @@
     {
         "id": "3",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://assets.lyreco.com/is/image/lyrecows/2018-11289785?$300px$&fmt=jpg&locale=TH_en",
         "desc": "This is Product 1",
         "price": 90,
         "size": [
@@ -35,7 +35,7 @@
     {
         "id": "4",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZCfUudf2pyHAxasy32IrqM1ZwtKTOlsCNNQ&usqp=CAU",
         "desc": "This is Product 1",
         "price": 40,
         "size": [
@@ -46,7 +46,7 @@
     {
         "id": "5",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZCfUudf2pyHAxasy32IrqM1ZwtKTOlsCNNQ&usqp=CAU",
         "desc": "This is Product 1",
         "price": 60,
         "size": [
@@ -57,7 +57,7 @@
     {
         "id": "6",
         "title": "computer",
-        "imageUrl": "",
+        "imageUrl": "https://assets.lyreco.com/is/image/lyrecows/2018-11289785?$300px$&fmt=jpg&locale=TH_en",
         "desc": "This is Product 1",
         "price": 30,
         "size": [
