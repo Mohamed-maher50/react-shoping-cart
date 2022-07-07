@@ -1,13 +1,18 @@
 import React from "react";
 import "../../css/Filter/Filter.css";
-function Filter() {
+function Filter(props) {
+  console.log(props);
   return (
     <div className="filter-wrapper">
       <h2 className="filter-title">Filter</h2>
       <div className="num-of-products">Number of product</div>
       <div className="filter-by-size">
         <span>Filter</span>
-        <select className="filter-select">
+        <select
+          className="filter-select"
+          onChange={(e) => props.handleFilterBySize(e)}
+          value={props.size}
+        >
           <option value={"ALL"}>ALL</option>
           <option value={"XS"}>XS</option>
           <option value={"S"}>S</option>
@@ -18,7 +23,11 @@ function Filter() {
       </div>
       <div className="filter-by-size">
         <span>Order</span>
-        <select className="filter-select">
+        <select
+          className="filter-select"
+          value={props.sortBy}
+          onChange={(e) => props.handleFilterByOrder(e)}
+        >
           <option value={"lastest"}>lastest</option>
           <option value={"lower"}>lower</option>
           <option value={"highest"}>highest</option>
