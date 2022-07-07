@@ -6,7 +6,7 @@
         "desc": "This is Product 1",
         "price": 30,
         "size": [
-            "5",
+            "XXL",
             "M"
         ]
     },
@@ -17,7 +17,7 @@
         "desc": "This is Product 2",
         "price": 55,
         "size": [
-            "ْXL",
+            "XL",
             "S"
         ]
     },
@@ -29,7 +29,8 @@
         "price": 90,
         "size": [
             "XXL",
-            "M"
+            "M",
+            "XS"
         ]
     },
     {
@@ -39,8 +40,9 @@
         "desc": "This is Product 1",
         "price": 40,
         "size": [
-            "s",
-            "L"
+            "S",
+            "L",
+            "XS"
         ]
     },
     {
@@ -61,7 +63,7 @@
         "desc": "This is Product 1",
         "price": 30,
         "size": [
-            "5",
+            "S",
             "M"
         ]
     }
