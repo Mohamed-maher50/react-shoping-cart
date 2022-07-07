@@ -5,6 +5,7 @@ import { words } from "./words";
 import data from "./data.json";
 import react, { useState } from "react";
 import Product from "./components/Product/Product";
+import Filter from "./components/Filter/Filter";
 function App() {
   const [products, setProducts] = useState(data);
   return (
@@ -13,7 +14,7 @@ function App() {
       <main>
         <div className="wrapper">
           <Product products={products} />
-          <div className="filter-wrapper">filter</div>
+          <Filter />
         </div>
       </main>
       <Footer />
