@@ -1,5 +1,5 @@
 import "../../css/Product/Product.css";
-import Modal from "react-modal";
+
 import { useState } from "react";
 import ProductModal from "./ProductModal";
 function Product(props) {
@@ -29,7 +29,9 @@ function Product(props) {
               <p>{product.title}</p>
               <span>${product.price}</span>
             </div>
-            <button>add to cart</button>
+            <button onClick={() => props.addToCartItem(product)}>
+              add to cart
+            </button>
           </div>
         );
       })}

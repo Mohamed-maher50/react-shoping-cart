@@ -1,16 +1,18 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import { words } from "./words";
+// import { words } from "./words";
 import data from "./data.json";
-import react, { useState } from "react";
+import { useState } from "react";
 import Product from "./components/Product/Product";
 import Filter from "./components/Filter/Filter";
+import Cart from "./components/cart/Cart";
 
 function App() {
   const [products, setProducts] = useState(data);
   const [sort, setSort] = useState("");
   const [size, setSize] = useState("");
+  const [cartItems, setCartItems] = useState([]);
   let handleFilterBySize = (e) => {
     setSize(e.target.value);
 
@@ -39,12 +41,17 @@ function App() {
     });
     setProducts(newProducts);
   };
+
+  const addToCartItem = (product) => {
+    setCartItems((oldArray) => [...oldArray, product]);
+    console.log(product);
+  };
   return (
     <div className="layout">
       <Header />
       <main>
         <div className="wrapper">
-          <Product products={products} />
+          <Product products={products} addToCartItem={addToCartItem} />
           <Filter
             handleFilterBySize={handleFilterBySize}
             size={size}
@@ -52,6 +59,7 @@ function App() {
             handleFilterByOrder={handleFilterByOrder}
           />
         </div>
+        <Cart cartItems={cartItems} />
       </main>
       <Footer />
     </div>
