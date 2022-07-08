@@ -4,7 +4,11 @@ function Cart(props) {
   console.log(props);
   return (
     <div className="cart-wrapper">
-      <div className="cart-title">Empty cart</div>
+      <div className="cart-title">
+        {props.cartItems.length
+          ? `there are ${props.cartItems.length} in cart`
+          : `not items added`}
+      </div>
       <div className="cart-items">
         {props.cartItems.map((item) => {
           return (
@@ -13,10 +17,12 @@ function Cart(props) {
               <div className="cart-info">
                 <div>
                   <p>{item.title}</p>
-                  <p>{item.desc}</p>
+                  <p>{item.qty ? item.qty : 0}</p>
                   <p>{item.price}</p>
                 </div>
-                <button>Remove</button>
+                <button onClick={() => props.removeFromCart(item)}>
+                  Remove
+                </button>
               </div>
             </div>
           );
