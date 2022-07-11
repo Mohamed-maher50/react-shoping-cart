@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import "../../css/cart/Cart.css";
+import CheckOut from "../checkout/CheckOut";
+
 function Cart(props) {
   let total = 0;
+  const submitOrder = (e) => {
+    e.preventDefault();
+    console.log("submited");
+  };
+
   const [showForm, setShowForm] = useState(false);
   const ShowForm = () => {
     setShowForm(true);
@@ -36,32 +43,14 @@ function Cart(props) {
           );
         })}
       </div>
-      <div className="cart-footer">
-        {props.cartItems.length != 0 ? (
-          <div className="total"> total price ${total} </div>
-        ) : (
-          ""
-        )}
-        <button onClick={ShowForm}>select product </button>
-      </div>
-      <div className={`checkout-form ${showForm ? "active" : ""}`}>
-        <span className="timeIcon" onClick={closeForm}>
-          &times;
-        </span>
-        <form>
-          <div>
-            <label>Name</label>
-            <input type={"text"} required name="name" />
-          </div>
-          <div>
-            <label>Email</label>
-            <input type={"email"} required name="email" />
-          </div>
-          <div>
-            <button type="submit">Checkout</button>
-          </div>
-        </form>
-      </div>
+      <CheckOut
+        total={total}
+        ShowForm={ShowForm}
+        closeForm={closeForm}
+        submitOrder={submitOrder}
+        cartItems={props.cartItems}
+        showForm={showForm}
+      />
     </div>
   );
 }
