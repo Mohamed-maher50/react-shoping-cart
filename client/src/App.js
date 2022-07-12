@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 import Product from "./components/Product/Product";
 import Filter from "./components/Filter/Filter";
 import Cart from "./components/cart/Cart";
-
+import { Provider } from "react-redux";
+import store from "./store/store";
 function App() {
   const [products, setProducts] = useState(data);
   const [sort, setSort] = useState("");
@@ -71,22 +72,24 @@ function App() {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
   return (
-    <div className="layout">
-      <Header />
-      <main>
-        <div className="wrapper">
-          <Product products={products} addToCartItem={addToCartItem} />
-          <Filter
-            handleFilterBySize={handleFilterBySize}
-            size={size}
-            sortBy={sort}
-            handleFilterByOrder={handleFilterByOrder}
-          />
-        </div>
-        <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
-      </main>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="layout">
+        <Header />
+        <main>
+          <div className="wrapper">
+            <Product products={products} addToCartItem={addToCartItem} />
+            <Filter
+              handleFilterBySize={handleFilterBySize}
+              size={size}
+              sortBy={sort}
+              handleFilterByOrder={handleFilterByOrder}
+            />
+          </div>
+          <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+        </main>
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
