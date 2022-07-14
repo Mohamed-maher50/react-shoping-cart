@@ -1,7 +1,8 @@
+import { connect } from "react-redux";
 import React from "react";
 import "../../css/Filter/Filter.css";
+import { filterSort, filterdSize } from "../../store/actions/products";
 function Filter(props) {
-  console.log(props);
   return (
     <div className="filter-wrapper">
       <h2 className="filter-title">Filter</h2>
@@ -10,7 +11,7 @@ function Filter(props) {
         <span>Filter</span>
         <select
           className="filter-select"
-          onChange={(e) => props.handleFilterBySize(e)}
+          onChange={(e) => props.filterdSize(props.products, e.target.value)}
           value={props.size}
         >
           <option value={"ALL"}>ALL</option>
@@ -26,7 +27,7 @@ function Filter(props) {
         <select
           className="filter-select"
           value={props.sortBy}
-          onChange={(e) => props.handleFilterByOrder(e)}
+          onChange={(e) => props.filterSort(props.products, e.target.value)}
         >
           <option value={"lastest"}>lastest</option>
           <option value={"lower"}>lower</option>
@@ -37,4 +38,14 @@ function Filter(props) {
   );
 }
 
-export default Filter;
+export default connect(
+  (state) => {
+    return {
+      sort: state.products.sort,
+      size: state.products.size,
+      products: state.products.products,
+      filterProducts: state.products.filterProducts,
+    };
+  },
+  { filterSort, filterdSize }
+)(Filter);

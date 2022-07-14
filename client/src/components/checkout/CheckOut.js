@@ -1,7 +1,6 @@
 import React from "react";
 
 function CheckOut(props) {
-  console.log(props);
   return (
     <>
       <div className="cart-footer">
