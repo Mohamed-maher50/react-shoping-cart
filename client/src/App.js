@@ -1,6 +1,7 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import { Connect } from "react-redux";
 // import { words } from "./words";
 import data from "./data.json";
 import { useEffect, useState } from "react";
@@ -68,9 +69,9 @@ function App() {
 
     setCartItems(removedItem);
   };
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+  // useEffect(() => {
+  //   localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  // }, [cartItems]);
   return (
     <Provider store={store}>
       <div className="layout">
